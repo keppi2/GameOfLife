@@ -19,8 +19,10 @@ class Test extends Specification {
    }
 
    def "a Cell can be alive or dead; expecting alive"() {
-      expect:
-          false
+      when:
+         Cell cell = new Cell()
+      then:
+         cell.isAlive() == true
    }
 
    def "if a cell has no living neighbors, the cell is dead in next round regardless of its own status"() {
